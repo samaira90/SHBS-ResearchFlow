@@ -1,75 +1,136 @@
-# React + TypeScript + Vite
+# SHBS ResearchFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack research study management dashboard designed to organize research studies, track progress, manage deadlines, and monitor recent activity.
 
-Currently, two official plugins are available:
+**Built with React, TypeScript, Express.js, and MySQL.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Project Screenshots
 
-## React Compiler
+### Dashboard
+![SHBS ResearchFlow Dashboard](public/screenshots/dashboard.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Recent Activity and Deadlines
+![Recent Activity and Deadlines](public/screenshots/activity-deadlines.png)
 
-## Expanding the ESLint configuration
+### Add Study Form
+![Add Study Form](public/screenshots/add-study.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Study Management:** Create, view, update, and delete research studies.
+- **Progress Tracking:** Track study status and completion progress.
+- **Deadline Management:** Assign study deadlines and view upcoming or overdue studies.
+- **Recent Activity:** Review recent actions performed on studies.
+- **Dashboard Interface:** View study information through an organized dashboard.
+- **Database Integration:** Store and retrieve study records using MySQL.
+- **REST API:** Connect the frontend and backend through Express.js endpoints.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Technology | Purpose |
+|---|---|
+| React | Frontend user interface |
+| TypeScript | Type-safe application development |
+| Vite | Frontend development server and build tool |
+| CSS | Styling and responsive layout |
+| Node.js | Backend runtime |
+| Express.js | REST API |
+| MySQL | Relational database |
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+Install the following before running the project:
+
+- Node.js and npm
+- MySQL Server
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/samaira90/SHBS-ResearchFlow.git
+cd SHBS-ResearchFlow
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install frontend dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+### 3. Configure the database
+
+Create a MySQL database named `shbs_researchflow`.
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside `backend` using `.env.example` as a template. Add your local MySQL connection settings. Do not commit your real `.env` file.
+
+Ensure the required database tables are created before starting the application.
+
+### 4. Start the backend
+
+From the `backend` directory, run:
+
+```bash
+npm run dev
+```
+
+Keep this terminal running.
+
+### 5. Start the frontend
+
+Open a second terminal, navigate to the project root, and run:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed by Vite in your browser.
+
+## 📁 Project Structure
+
+```text
+SHBS-ResearchFlow/
+├── backend/
+│   ├── server.ts
+│   ├── package.json
+│   └── .env.example
+├── public/
+│   └── screenshots/
+│       ├── dashboard.png
+│       ├── activity-deadlines.png
+│       └── add-study.png
+├── src/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+├── package.json
+└── README.md
+```
+
+## 🔒 Security
+
+- Database credentials are stored in environment variables.
+- The actual `.env` file should not be committed to version control.
+- `.env.example` documents the configuration required to run the application.
+
+## 👩‍💻 Author
+
+**Samaira**
+
+GitHub: [@samaira90](https://github.com/samaira90)
+
+[View SHBS ResearchFlow on GitHub](https://github.com/samaira90/SHBS-ResearchFlow)
+
+---
+
+*Developed as a full-stack software development portfolio project.*
